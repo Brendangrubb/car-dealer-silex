@@ -5,6 +5,21 @@
     </head>
     <body>
         <h1>You added a car</h1>
+            <h4>{{newcar.getModel}}</h4>
+            <h4>{{newcar.getPrice}}</h4>
+            <h4>{{newcar.getMileage}}</h4>
+            <h4>{{newcar.getYear}}</h4>
+
+            <h1>Here is a list of all available cars:</h1>
+            <strong>MODEL // YEAR // MILEAGE // PRICE</strong>
+
+            {% for car in car_array %}
+            <h4>{{car.getModel}} //  {{car.getYear}} //  {{car.getMileage}} // {{car.getPrice}}</h4>
+            {% endfor %}
+
+            <form action="/delete_cars" method="post">
+                <button type="submit" name="button">Delete All Listings</button>
+            </form>
         <a href="/">Home</a>
     </body>
 </html>

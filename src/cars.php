@@ -5,14 +5,13 @@ class Car
     private $price;
     private $mileage;
     private $year;
-    private $img;
-    function __construct($model, $price, $mileage, $year, $image_path)
+
+    function __construct($model, $price, $mileage, $year)
     {
         $this->model = $model;
         $this->price = $price;
         $this->mileage = $mileage;
         $this->year = $year;
-        $this->img = $image_path;
     }
     // function setPrice($new_price) {
     //     $float_price = (float) $new_price;
@@ -53,11 +52,23 @@ class Car
         return $this->year;
     }
 
-    function setImg() {
-        $this->img = $new_img;
+    // function setImg() {
+    //     $this->img = $new_img;
+    // }
+    // function getImg() {
+    //     return $this->img;
+    // }
+
+    static function getAll() {
+        return $_SESSION['list_of_cars'];
     }
-    function getImg() {
-        return $this->img;
+
+    function save() {
+        array_push($_SESSION['list_of_cars'], $this);
+    }
+
+    static function deleteAll() {
+        $_SESSION['list_of_cars'] = array();
     }
   }
 ?>
