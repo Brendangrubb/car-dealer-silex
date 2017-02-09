@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <link href='css/styles.css' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <title>Find a Car</title>
+  </head>
+  <body>
+    <div class='container'>
+        <h1>Find a Car!</h1>
+        <form action='/view_car'>
+            <div class='form-group'>
+                <label for='buyer_price'>Enter Maximum Price:</label>
+                <input id='buyer_price' name='buyer_price' class='form-control' type='number'>
+                <label for='buyer_mileage'>Enter Maximum Mileage:</label>
+                <input id='buyer_mileage' name='buyer_mileage' class='form-control' type='number'>
+            </div>
+        <button type='submit' class='btn btn-success'>See what's available</button>
+        </form>
+        <h1>Enter a car you are selling</h1>
+        <form action='/sellcar' method='post'>
+            <div class='form-group'>
+                <label for='seller_model'>Enter a car model</label>
+                <input name='seller_model' id='seller_model' type='text' class='form-control'>
+            </div>
+            <div class='form-group'>
+                <label for='seller_mileage'>Enter a car mileage</label>
+                <input name='seller_mileage' id='seller_mileage' type='text' class='form-control'>
+            </div>
+            <div class='form-group'>
+                <label for='seller_price'>Enter a car price</label>
+                <input name='seller_price' id='seller_price' type='text' class='form-control'>
+            </div>
+                <button type='submit' class='btn btn-warning'>submit car for sale</button>
+        </form>
+  </body>
+</html>

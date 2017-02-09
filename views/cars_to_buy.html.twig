@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>Cars that fit your search</h1>
+
+
+        {% for car in cars %}
+            {% if car.getPrice < buy_price and car.getMileage < buy_mileage %}
+                {% set cars_matching_search = cars_matching_search|merge([car]) %}
+            {% endif %}
+        {% endfor %}
+
+        {% for car in cars_matching_search %}
+            <p>Model: {{car.getModel}}</p>
+            <p>Price: {{car.getPrice}}</p>
+            <p>Mileage: {{car.getMileage}}</p>
+            <p>Year: {{car.getYear}}</p>
+        {% endfor %}
+
+        <a href="/">Home</a>
+    </body>
+</html>
